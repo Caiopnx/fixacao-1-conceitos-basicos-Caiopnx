@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- push
+- workflow_dispatch
 - repository_dispatch
 permissions:
   checks: write
@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: RodarTestes
         setup-command: ''
-        command: "./TestesFixacaoConceitosBasicos1/run.sh"
+        command: dotnet test
         timeout: 10
         max-score: 10
     - name: Autograding Reporter
