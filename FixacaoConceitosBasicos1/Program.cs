@@ -1,12 +1,44 @@
-﻿
-/*
- * As classes a serem dsenvolvidas devem atender aos seguintes requisitos:
- * - Devem estar na pasta Model
- * - Para a classe SomaDoisNumeros, deve-se criar um método estático chamado Somar que recebe dois inteiros e retorna a soma deles
- * - Para a classe MetrosMilimetros, deve-se criar um método estático chamado Converter que recebe um double e retorna o valor em milímetros
- * - A  classe CalculaAumento deve ter um método estático chamado Calcular que recebe um double salario e um double aumento e retorna o valor do salário com o aumento aplicado
- * A classe CalculaDesconto deve ter um método estático chamado Calcular que recebe um double valor e um double desconto e retorna o valor com o desconto aplicado
- * - A classe CalculaAluguelCarro deve ter um método estático chamado Calcular que recebe um int dias, um int quilometragemInicial, um int quilometragemFinal e retorna o valor total do aluguel
- */
-//Primeira tarefa realizada
-Console.WriteLine("Hi");
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Informe seu peso (kg): ");
+        double peso = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Informe sua altura (m): ");
+        double altura = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Informe seu gênero (M/F): ");
+        string genero = Console.ReadLine();
+
+        double imc = peso / (altura * altura);
+        Console.WriteLine($"\nSeu IMC é: {imc:F1}");
+
+        if (imc < 18.5)
+        {
+            Console.WriteLine("Classificação: Abaixo do peso");
+        }
+        else if (imc < 25)
+        {
+            Console.WriteLine("Classificação: Peso ideal (parabéns)");
+        }
+        else if (imc < 30)
+        {
+            Console.WriteLine("Classificação: Levemente acima do peso");
+        }
+        else if (imc < 35)
+        {
+            Console.WriteLine("Classificação: Obesidade grau I");
+        }
+        else if (imc < 40)
+        {
+            Console.WriteLine("Classificação: Obesidade grau II (severa)");
+        }
+        else
+        {
+            Console.WriteLine("Classificação: Obesidade grau III (mórbida)");
+        }
+    }
+}
